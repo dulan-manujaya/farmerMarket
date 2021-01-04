@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import {GooglemapComponent} from './googlemap/googlemap.component';
+
+const routes: Routes = [
+
+  {path:'map',component:GooglemapComponent}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
