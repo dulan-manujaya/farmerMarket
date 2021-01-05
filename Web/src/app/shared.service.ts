@@ -11,16 +11,16 @@ export class SharedService {
 
   constructor(private http:HttpClient) { }
 
-  //getLists
+  // //getLists
 
-  getLocationList():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/location');
-  }
+  // getLocationList():Observable<any[]>{
+  //   return this.http.get<any>(this.APIUrl+'/location');
+  // }
 
-  //getFarmerList
+  // //getFarmerList
 
-  getFarmerList():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/location');
-  }
+  // getFarmerList():Observable<any[]>{
+  //   return this.http.get<any>(this.APIUrl+'/location');
+  // }
 
 }
