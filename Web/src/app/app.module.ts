@@ -10,7 +10,10 @@ import {SharedService} from './shared.service';
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import { AgmCoreModule } from '@agm/core'; 
+import { AgmCoreModule } from '@agm/core';
+import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
+import { FarmerRegisterComponent } from './farmer-register/farmer-register.component';
+import { UserLoginComponent } from './user-login/user-login.component'; 
 
 
 @NgModule({
@@ -19,6 +22,9 @@ import { AgmCoreModule } from '@agm/core';
     GooglemapComponent,
     ShowGooglemapComponent,
     AddEditGooglemapComponent,
+    FarmerLoginComponent,
+    FarmerRegisterComponent,
+    UserLoginComponent,
   ],
   imports: [
     BrowserModule,

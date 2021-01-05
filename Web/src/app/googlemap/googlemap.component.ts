@@ -10,10 +10,10 @@ export class GooglemapComponent implements OnInit {
   constructor() { }
   latitude=51.678418; 
   longitude=7.809007; 
-  // location(x){ 
-  //   this.latitude=x.coords.lat; 
-  //   this.longitude=x.coords.lng; 
-  // }
+  location(x){ 
+    this.latitude=x.coords.lat; 
+    this.longitude=x.coords.lng; 
+  }
   ngOnInit(): void {
   }
 
