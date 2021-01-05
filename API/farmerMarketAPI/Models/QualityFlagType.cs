@@ -7,5 +7,7 @@ namespace farmerMarketAPI.Models
 {
     public class QualityFlagType
     {
+        public int QualityFlagId { get; set; }
+        public string Name { get; set; }
     }
 }
