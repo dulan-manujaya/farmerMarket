@@ -7,19 +7,39 @@
       type="text"
       id="name"
       name="name"
-    /><br />
+      style="width: 25%;"
+    /><br/>
     <label for="username">Price:</label><br />
     <input
       type="number"
       id="price"
       name="price"
-    /><br />
+      style="width: 25%;"
+    /><br/>
     <label for="username">Quantity:</label><br />
     <input
       type="number"
       id="quantity"
       name="quantity"
-    /><br />
+      style="width: 25%;"
+    /><br/>
+    <input type="submit" value="Add"  style="padding-right: 50px; padding-left: 50px;"/>
+    <br/><br/>
+
+
+    <table id="users">
+      <tr>
+        <th *ngFor = "let column of headers" >
+          {{column}}
+          </th>
+        </tr>
+        <tr *ngFor = "let row of rows">
+          <td *ngFor = "let column of headers">
+            {{row[column]}}
+          </td>
+        </tr>
+          </table>
+
   </div>
   <!-- <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
   
