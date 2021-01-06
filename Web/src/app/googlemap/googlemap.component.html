@@ -1,7 +1,40 @@
 
 
-<agm-map [latitude]="latitude" [longitude]="longitude" 
+<!-- <agm-map [latitude]="latitude" [longitude]="longitude" 
       (mapClick)="location($event)"> 
   <agm-marker [latitude]="latitude" [longitude]="longitude"> 
 </agm-marker> 
-</agm-map> 
+</agm-map>  -->
+
+<agm-map 
+
+[latitude]='lat' 
+
+[longitude]='long'
+
+[zoom]='zoom'
+
+>
+
+ 
+
+ <agm-marker 
+
+     *ngFor="let marker of markers" 
+
+     [latitude]="marker.lat" 
+
+       [longitude]="marker.lng">    
+
+           <agm-info-window #infoWindow>
+            Hi, this is the content of the <strong>info window</strong>
+            <a href="https://angular-maps.com/api-docs/agm-core/components/agminfowindow">Click me</a>
+               {{ marker.label }}
+
+         </agm-info-window>
+
+ </agm-marker>
+
+ 
+
+</agm-map>
