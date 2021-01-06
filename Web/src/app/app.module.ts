@@ -13,7 +13,9 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { FarmerRegisterComponent } from './farmer-register/farmer-register.component';
-import { UserLoginComponent } from './user-login/user-login.component'; 
+import { UserLoginComponent } from './user-login/user-login.component';
+import { WebmasterDashboardComponent } from './webmaster-dashboard/webmaster-dashboard.component';
+import { FarmerProfileComponent } from './farmer-profile/farmer-profile.component'; 
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
     FarmerLoginComponent,
     FarmerRegisterComponent,
     UserLoginComponent,
+    WebmasterDashboardComponent,
+    FarmerProfileComponent,
   ],
   imports: [
     BrowserModule,
