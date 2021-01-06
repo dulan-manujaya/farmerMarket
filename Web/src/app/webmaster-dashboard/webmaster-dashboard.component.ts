@@ -3,17 +3,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-login',
-  templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css'],
+  selector: 'app-webmaster-dashboard',
+  templateUrl: './webmaster-dashboard.component.html',
+  styleUrls: ['./webmaster-dashboard.component.css'],
 })
-export class UserLoginComponent implements OnInit {
+export class WebmasterDashboardComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
+      conpassword: ['', Validators.required],
+      email: ['', Validators.required],
+      type: ['', Validators.required]
     });
   }
 
@@ -30,7 +33,7 @@ export class UserLoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    sessionStorage.setItem("user",JSON.stringify(this.loginForm.value) );
+    //sessionStorage.setItem("farmer",JSON.stringify(this.loginForm.value) );
     // this.authService.login(this.loginForm.value);
     //this.router.navigateByUrl('/admin');
   }

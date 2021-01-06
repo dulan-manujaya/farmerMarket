@@ -12,8 +12,13 @@ export class FarmerRegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required],
+      conpassword: ['', Validators.required],
+      gender: ['', Validators.required],
+      maritalstatus: ['', Validators.required],
+      longitude: ['', Validators.required],
+      latitude: ['', Validators.required],
     });
   }
 
@@ -30,7 +35,8 @@ export class FarmerRegisterComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+    sessionStorage.setItem("farmer",JSON.stringify(this.loginForm.value) );
     // this.authService.login(this.loginForm.value);
-    this.router.navigateByUrl('/admin');
+    //this.router.navigateByUrl('/admin');
   }
 }
