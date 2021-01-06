@@ -30,6 +30,23 @@ namespace farmerMarketAPI.Controllers
 
 
         }
+        public HttpResponseMessage Get(int id)
+        {
+            string query = @"select * from dbo.Farmer WHERE Id =";
+            DataTable table = new DataTable();
+            using (var con = new SqlConnection(ConfigurationManager.
+                ConnectionStrings["MapsDB"].ConnectionString))
+            using (var cmd = new SqlCommand(query, con))
+            using (var da = new SqlDataAdapter(cmd))
+            {
+                cmd.CommandType = CommandType.Text;
+                da.Fill(table);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, table);
+
+
+        }
 
         public string Post([FromBody] Farmer farmer)
         {

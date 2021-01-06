@@ -7,15 +7,15 @@ import {Observable} from 'rxjs';
 })
 export class SharedService {
 
-  readonly APIUrl = "http://localhost:5535/api";
+  readonly APIUrl = "http://localhost:49710/api";
 
   constructor(private http:HttpClient) { }
 
   // //getLists
 
-  // getLocationList():Observable<any[]>{
-  //   return this.http.get<any>(this.APIUrl+'/location');
-  // }
+  getLocationList():Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/farmer');
+  }
 
   // //getFarmerList
 
