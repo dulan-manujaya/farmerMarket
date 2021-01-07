@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {SharedService} from 'src/app/shared.service';
 
-@Component({
-  selector: 'app-googlemap',
-  templateUrl: './googlemap.component.html',
-  styleUrls: ['./googlemap.component.css']
-})
-export class GooglemapComponent implements OnInit {
 
+@Component({
+  selector: 'app-public-viewmap',
+  templateUrl: './public-viewmap.component.html',
+  styleUrls: ['./public-viewmap.component.css']
+})
+export class PublicViewmapComponent implements OnInit {
   constructor(private service:SharedService) { }
 
   FarmerList:any=[];
 
   markers = [
-    {lat:7.2906000000,lng: 80.6337000000,label: "A" ,icon:{}}
+    {lat:7.2906000000,lng: 80.6337000000,label: "A" }
   ];
 
   lat =7.2906000000;
@@ -70,10 +70,8 @@ export class GooglemapComponent implements OnInit {
         this.markers.push({
           lat:element.Longitude,
           lng:element.Latitude,
-          label:element.Username,
-          icon: {
-            url: element.QualityFlag
-          }
+          label:element.Username
+         
         });
       });
      

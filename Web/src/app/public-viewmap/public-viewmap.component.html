@@ -1,5 +1,4 @@
 
-
 <!-- <agm-map [latitude]="latitude" [longitude]="longitude" 
       (mapClick)="location($event)"> 
   <agm-marker [latitude]="latitude" [longitude]="longitude"> 
@@ -23,12 +22,12 @@
      *ngFor="let marker of markers" 
 
      [latitude]="marker.lat" 
-     [iconUrl]="marker.icon"
+   
        [longitude]="marker.lng">    
 
            <agm-info-window #infoWindow>
-            <strong> {{ marker.label }}</strong>
-            <a href='/farmer-profile'>More Info</a>
+            Hi, this is the content of the <strong>info window</strong>
+            <a href="https://angular-maps.com/api-docs/agm-core/components/agminfowindow">Click me</a>
                {{ marker.label }}
 
          </agm-info-window>

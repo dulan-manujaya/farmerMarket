@@ -32,7 +32,7 @@ namespace farmerMarketAPI.Controllers
         }
         public HttpResponseMessage Get(int id)
         {
-            string query = @"select * from dbo.Farmer WHERE Id =";
+            string query = @"select * from dbo.Farmer WHERE Id =" + id ;
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.
                 ConnectionStrings["MapsDB"].ConnectionString))
@@ -71,5 +71,34 @@ namespace farmerMarketAPI.Controllers
                 return "Error occured when creating Farmer";
             }
         }
+
+        public string PostProducts([FromBody] FarmerProducts farmer,int id)
+        {
+            try
+            {
+                string query = @"insert into dbo.FarmerProducts values
+            ('" + id + @"','" + farmer.ProductName + @"','" + farmer.Price + @"','" + farmer.Quantity +@"')";
+
+                DataTable table = new DataTable();
+                using (var con = new SqlConnection(ConfigurationManager.
+                    ConnectionStrings["MapsDB"].ConnectionString))
+                using (var cmd = new SqlCommand(query, con))
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    da.Fill(table);
+                }
+                return "Farmer Product Created Sucessfully";
+            }
+            catch (Exception ex)
+            {
+                return "Error occured when creating Farmer Products";
+            }
+        }
+
+
+
+
+
     }
 }
