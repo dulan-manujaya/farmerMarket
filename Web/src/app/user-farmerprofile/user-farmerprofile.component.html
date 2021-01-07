@@ -1,32 +1,16 @@
-<h1 style="text-align: center">User Creation</h1>
+<h1 style="text-align: center">Farmer Profile</h1>
 <div class="login">
-  <h2 class="login-header">Create user</h2>
+  <h2 class="login-header">Details</h2>
   <div class="login-container">
-    <label for="username">Name:</label><br />
-    <input type="text" id="name" name="name" style="width: 25%" /><br />
-    <label for="username">Price:</label><br />
-    <input
-      type="number"
-      id="price"
-      name="price"
-      style="width: 25%"
-      min="0"
-      value="0"
-      step=".01"
-    /><br />
-    <label for="username">Quantity:</label><br />
-    <input
-      type="number"
-      id="quantity"
-      name="quantity"
-      style="width: 25%"
-      min="0"
-      value="0"
-      step=".01"
-    /><br />
+    <label for="username">Quality:</label><br />
+    <select>
+        <option *ngFor="let type of qualityFlagType" value={{type.icon}}>
+            {{type.name}}
+        </option>
+    </select>
     <input
       type="submit"
-      value="Add"
+      value="Save"
       style="padding-right: 50px; padding-left: 50px"
     />
     <br /><br />
