@@ -14,6 +14,8 @@ namespace farmerMarketAPI.Models
         public string MaritalStatus { get; set; }
         public decimal Longitude { get; set; }
         public decimal Latitude { get; set; }
-        public int QualityFlag { get; set; }
+        public string QualityFlag { get; set; }
+     
+
     }
 }

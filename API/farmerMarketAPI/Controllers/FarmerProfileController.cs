@@ -49,5 +49,30 @@ namespace farmerMarketAPI.Controllers
 
 
         }
+
+        public string Post([FromBody] Farmer user)
+        {
+            try
+            {
+                string query = @"EXEC [dbo].[UpdateFarmerStatus]
+		 @FarmerId =" + user.FarmerId + ", @Status=  N'" + user.QualityFlag+"'" ;
+
+                DataTable table = new DataTable();
+                using (var con = new SqlConnection(ConfigurationManager.
+                    ConnectionStrings["MapsDB"].ConnectionString))
+                using (var cmd = new SqlCommand(query, con))
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    da.Fill(table);
+                }
+                return "Status updated!";
+            }
+            catch (Exception ex)
+            {
+                return "Error updating the Status!";
+            }
+        }
+
     }
 }
