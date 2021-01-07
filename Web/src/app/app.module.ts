@@ -15,7 +15,8 @@ import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { FarmerRegisterComponent } from './farmer-register/farmer-register.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { WebmasterDashboardComponent } from './webmaster-dashboard/webmaster-dashboard.component';
-import { FarmerProfileComponent } from './farmer-profile/farmer-profile.component'; 
+import { FarmerProfileComponent } from './farmer-profile/farmer-profile.component';
+import { PublicViewmapComponent } from './public-viewmap/public-viewmap.component'; 
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FarmerProfileComponent } from './farmer-profile/farmer-profile.componen
     UserLoginComponent,
     WebmasterDashboardComponent,
     FarmerProfileComponent,
+    PublicViewmapComponent,
   ],
   imports: [
     BrowserModule,

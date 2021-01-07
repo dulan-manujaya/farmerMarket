@@ -6,6 +6,8 @@ import {FarmerRegisterComponent} from './farmer-register/farmer-register.compone
 import {FarmerProfileComponent} from './farmer-profile/farmer-profile.component';
 
 import {UserLoginComponent} from './user-login/user-login.component';
+import {PublicViewmapComponent} from './public-viewmap/public-viewmap.component';
+
 
 import {WebmasterDashboardComponent} from './webmaster-dashboard/webmaster-dashboard.component';
 
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'farmer-login', component: FarmerLoginComponent },
   { path: 'farmer-register', component: FarmerRegisterComponent},
   { path: 'farmer-profile', component: FarmerProfileComponent},
+  { path: 'public-view', component: PublicViewmapComponent},
+
 
   { path: 'user-login', component: UserLoginComponent },
 
