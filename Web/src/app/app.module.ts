@@ -17,6 +17,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { WebmasterDashboardComponent } from './webmaster-dashboard/webmaster-dashboard.component';
 import { FarmerProfileComponent } from './farmer-profile/farmer-profile.component';
 import { PublicViewmapComponent } from './public-viewmap/public-viewmap.component'; 
+import { UserFarmerprofileComponent } from './user-farmerprofile/user-farmerprofile.component'; 
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { PublicViewmapComponent } from './public-viewmap/public-viewmap.componen
     WebmasterDashboardComponent,
     FarmerProfileComponent,
     PublicViewmapComponent,
+    UserFarmerprofileComponent,
   ],
   imports: [
     BrowserModule,

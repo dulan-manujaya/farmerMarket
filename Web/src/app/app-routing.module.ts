@@ -8,6 +8,7 @@ import {FarmerProfileComponent} from './farmer-profile/farmer-profile.component'
 import {UserLoginComponent} from './user-login/user-login.component';
 import {PublicViewmapComponent} from './public-viewmap/public-viewmap.component';
 
+import {UserFarmerprofileComponent } from './user-farmerprofile/user-farmerprofile.component'; 
 
 import {WebmasterDashboardComponent} from './webmaster-dashboard/webmaster-dashboard.component';
 
@@ -24,6 +25,7 @@ const routes: Routes = [
 
 
   { path: 'user-login', component: UserLoginComponent },
+  { path: 'user-farmerprofile', component: UserFarmerprofileComponent },
 
   { path: 'webmaster-dashboard', component: WebmasterDashboardComponent },
 
