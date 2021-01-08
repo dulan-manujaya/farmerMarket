@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { WebMasterAuthGuard } from './webmaster-auth.guard';
+import { DOAauthGuard } from './doa-auth.guard';
+import { KeellsAuthGuard } from './keells-auth.guard';
+import { FarmerAuthGuard } from './farmer-auth.guard';
+
 import {FarmerLoginComponent} from './farmer-login/farmer-login.component';
 import {FarmerRegisterComponent} from './farmer-register/farmer-register.component';
 import {FarmerProfileComponent} from './farmer-profile/farmer-profile.component';
 
 import {UserLoginComponent} from './user-login/user-login.component';
 import {PublicViewmapComponent} from './public-viewmap/public-viewmap.component';
-
 import {UserFarmerprofileComponent } from './user-farmerprofile/user-farmerprofile.component'; 
 
 import {WebmasterDashboardComponent} from './webmaster-dashboard/webmaster-dashboard.component';
@@ -16,20 +20,22 @@ import {GooglemapComponent} from './googlemap/googlemap.component';
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', redirectTo: 'map'},
+  { path: '', pathMatch: 'full', redirectTo: 'public-view'},
 
   { path: 'farmer-login', component: FarmerLoginComponent },
   { path: 'farmer-register', component: FarmerRegisterComponent},
-  { path: 'farmer-profile', component: FarmerProfileComponent},
+  { path: 'farmer-profile', component: FarmerProfileComponent, canActivate: [FarmerAuthGuard]},
   { path: 'public-view', component: PublicViewmapComponent},
 
-
   { path: 'user-login', component: UserLoginComponent },
-  { path: 'user-farmerprofile', component: UserFarmerprofileComponent },
+  { path: 'user-farmerprofile', component: UserFarmerprofileComponent, canActivate: [KeellsAuthGuard, DOAauthGuard] },
+  //{ path: 'user-farmerprofile', component: UserFarmerprofileComponent },
 
-  { path: 'webmaster-dashboard', component: WebmasterDashboardComponent },
+  { path: 'webmaster-dashboard', component: WebmasterDashboardComponent, canActivate: [WebMasterAuthGuard] },
 
-  {path:'map',component:GooglemapComponent}
+  {path:'map',component:GooglemapComponent, canActivate: [KeellsAuthGuard, DOAauthGuard]}
+
+  
 
 ];
 
