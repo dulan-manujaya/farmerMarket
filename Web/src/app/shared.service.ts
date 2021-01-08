@@ -46,10 +46,11 @@ export class SharedService {
   }
 
 
-  // //getFarmerList
+ //report getAll()
 
-  // getFarmerList():Observable<any[]>{
-  //   return this.http.get<any>(this.APIUrl+'/location');
-  // }
+ getFarmerProductReports():Observable<any[]>{
+  return this.http.get<any>(this.APIUrl+'/report');
+}
+
 
 }

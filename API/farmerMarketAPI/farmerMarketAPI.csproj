@@ -282,6 +282,7 @@
     <Compile Include="Controllers\FarmerProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KeellsController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WebMasterController.cs" />
     <Compile Include="Global.asax.cs">

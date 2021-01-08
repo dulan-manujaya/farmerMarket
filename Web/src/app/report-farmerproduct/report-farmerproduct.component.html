@@ -1,0 +1,19 @@
+<h1 style="text-align: center">Report</h1>
+<div class="login">
+  <h2 class="login-header">Farmer - Products</h2>
+  <div class="login-container">
+    <table id="users">
+      <tr>
+        <th *ngFor="let column of headers">
+          {{ column }}
+        </th>
+      </tr>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let column of headers">
+          {{ row[column] }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+</div>
