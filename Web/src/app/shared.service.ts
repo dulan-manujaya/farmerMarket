@@ -25,6 +25,26 @@ export class SharedService {
     return this.http.post<any>(this.APIUrl+`/farmer`,farmer);
   }
 
+  farmerLogin(farmer:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/farmer`,farmer);
+  }
+
+  farmerAddProducts(farmer:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/farmerProfile`,farmer);
+  }
+
+  userLogin(farmer:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/user`,farmer);
+  }
+
+  userCreation(user:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/webMaster`,user);
+  }
+
+  userUpdateFarmerQuality(farmer:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/farmerProfile`,farmer);
+  }
+
 
   // //getFarmerList
 
