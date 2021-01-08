@@ -19,6 +19,7 @@ import { FarmerProfileComponent } from './farmer-profile/farmer-profile.componen
 import { PublicViewmapComponent } from './public-viewmap/public-viewmap.component'; 
 import { UserFarmerprofileComponent } from './user-farmerprofile/user-farmerprofile.component';
 import { ReportFarmerproductComponent } from './report-farmerproduct/report-farmerproduct.component'; 
+import { HeaderComponent } from './components/header/header.component'; 
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ReportFarmerproductComponent } from './report-farmerproduct/report-farm
     PublicViewmapComponent,
     UserFarmerprofileComponent,
     ReportFarmerproductComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
