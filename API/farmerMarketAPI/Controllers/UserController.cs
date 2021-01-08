@@ -11,7 +11,7 @@ using System.Web.Http;
 
 namespace farmerMarketAPI.Controllers
 {
-    public class KeellsController : ApiController
+    public class UserController : ApiController
     {
 
         //login
@@ -19,7 +19,7 @@ namespace farmerMarketAPI.Controllers
         {
             try
             {
-                string query = @"EXEC [dbo].[KeellsLogin]
+                string query = @"EXEC [dbo].[UserLogin]
 		@username =" + user.Username + ", @pwd=" + user.Pwd;
 
                 DataTable table = new DataTable();
