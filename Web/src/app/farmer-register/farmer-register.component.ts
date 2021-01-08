@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {SharedService} from 'src/app/shared.service';
+
 
 @Component({
   selector: 'app-farmer-register',
@@ -8,15 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./farmer-register.component.css'],
 })
 export class FarmerRegisterComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private service:SharedService,private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required],
+      pwd: ['', Validators.required],
       conpassword: ['', Validators.required],
       gender: ['', Validators.required],
-      maritalstatus: ['', Validators.required],
+      maritalStatus: ['', Validators.required],
       longitude: ['', Validators.required],
       latitude: ['', Validators.required],
     });
@@ -35,8 +37,16 @@ export class FarmerRegisterComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+
     sessionStorage.setItem("farmer",JSON.stringify(this.loginForm.value) );
+   // farmerRegistration
+    this.service.farmerRegistration(this.loginForm.value).subscribe(data =>{
+      console.log(JSON.stringify(data));
+  
+      });
+
+      
+    }
     // this.authService.login(this.loginForm.value);
     //this.router.navigateByUrl('/admin');
   }
-}

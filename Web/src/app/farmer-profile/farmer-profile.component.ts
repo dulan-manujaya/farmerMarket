@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedService} from 'src/app/shared.service';
+
 
 @Component({
   selector: 'app-farmer-profile',
@@ -7,40 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmerProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:SharedService) { }
 
 
   headers = ['Product','Qty','Price'];
 
-  rows = [
-    {
-      "Product":"1",
-      "Qty":"50",
-      "Price":"100.00"
-    },
-    {
-      "Product":"2",
-      "Qty":"150",
-      "Price":"200.00"
-    },
-    {
-      "Product":"3",
-      "Qty":"500",
-      "Price":"1000.00"
-    },
-    {
-      "Product":"4",
-      "Qty":"50",
-      "Price":"500.00"
-    },
-    {
-      "Product":"5",
-      "Qty":"500",
-      "Price":"1500.00"
-    }
-  ]
+  id = "1";
+
+  rows = []
 
   ngOnInit(): void {
+    this.getfarmerProfileList();
+
   }
+
+  getfarmerProfileList(){
+    this.service.getfarmerProfileList(this.id).subscribe(data =>{
+      console.log(JSON.stringify(data));
+    //  this.rows = data;
+      data.forEach(element => {
+        this.rows.push({
+          Product:element.ProductName,
+          Qty:element.Quantity,
+          Price:element.Price,
+         
+        });
+      });
+
+      
+    })
+    
+    }
 
 }

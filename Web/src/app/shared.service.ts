@@ -17,6 +17,15 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl+'/farmer');
   }
 
+  getfarmerProfileList(id:string):Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+`/farmerProfile/${id}`);
+  }
+
+  farmerRegistration(farmer:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/farmer`,farmer);
+  }
+
+
   // //getFarmerList
 
   // getFarmerList():Observable<any[]>{
