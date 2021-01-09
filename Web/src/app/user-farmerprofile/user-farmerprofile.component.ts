@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedService} from 'src/app/shared.service';
+import { Router,ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-user-farmerprofile',
@@ -6,56 +9,60 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-farmerprofile.component.css']
 })
 export class UserFarmerprofileComponent implements OnInit {
-
-  constructor() { }
-
+ 
+  constructor(private service:SharedService, private router: Router,    private route: ActivatedRoute) { 
+   
+  }
 
   headers = ['Product','Qty','Price'];
-
-  rows = [
-    {
-      "Product":"1",
-      "Qty":"50",
-      "Price":"100.00"
-    },
-    {
-      "Product":"2",
-      "Qty":"150",
-      "Price":"200.00"
-    },
-    {
-      "Product":"3",
-      "Qty":"500",
-      "Price":"1000.00"
-    },
-    {
-      "Product":"4",
-      "Qty":"50",
-      "Price":"500.00"
-    },
-    {
-      "Product":"5",
-      "Qty":"500",
-      "Price":"1500.00"
-    }
-  ]
-
+  id = "";
+  user={};
+  rows = []
+  selectedLevel;
   qualityFlagType = [
-    {
-      "icon":"http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-      "name":"Inedible"
-    },
-    {
-      "icon":"http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-      "name":"Fair"
-    },
     {
       "icon":"http://maps.google.com/mapfiles/ms/icons/green-dot.png",
       "name":"Excellent"
     },
+    {
+      "icon":"http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+      "name":"Very Bad"
+    },
   ]
 
   ngOnInit(): void {
+    if(this.route.snapshot.queryParamMap.get('id'))
+    this.id = this.route.snapshot.queryParamMap.get('id')
+    console.log(this.route.snapshot.queryParamMap.get('id')); // e.g. in URI ?param1=blah
+
+    this.getfarmerProfileList();
+   
+  }
+ 
+
+  getfarmerProfileList(){
+    this.service.getfarmerProfileList(this.id).subscribe(data =>{
+      data.forEach(element => {
+        this.rows.push({
+          Product:element.ProductName,
+          Qty:element.Quantity,
+          Price:element.Price,
+         
+        });
+      });
+    })
+  }
+
+  clickFunction() {
+
+    //alert("clicked me!");
+    console.log(this.selectedLevel)
+    this.user={FarmerId : this.id, QualityFlag:this.selectedLevel}
+    this.service.userUpdateFarmerQuality(this.user).subscribe(data =>{
+      console.log(data)
+        alert("Status updated!");
+    })
+
   }
 
 }

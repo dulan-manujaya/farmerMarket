@@ -24,13 +24,18 @@ export class SharedService {
   farmerRegistration(farmer:any):Observable<any[]>{
     return this.http.post<any>(this.APIUrl+`/farmer`,farmer);
   }
-  
-  farmerAddProducts(farmer:any):Observable<any[]>{
-    return this.http.post<any>(this.APIUrl+`/farmerProfile`,farmer);
+
+  farmerLogin(farmer:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/farmerLogin`,farmer);
   }
 
-  userLogin(farmer:any):Observable<any[]>{
-    return this.http.post<any>(this.APIUrl+`/user`,farmer);
+  
+  farmerAddProducts(farmer:any,id:string):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/farmer/${id}`,farmer);
+  }
+
+  userLogin(user:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/user`,user);
   }
 
   userCreation(user:any):Observable<any[]>{
@@ -42,10 +47,11 @@ export class SharedService {
   }
 
 
-  // //getFarmerList
+ //report getAll()
 
-  // getFarmerList():Observable<any[]>{
-  //   return this.http.get<any>(this.APIUrl+'/location');
-  // }
+ getFarmerProductReports():Observable<any[]>{
+  return this.http.get<any>(this.APIUrl+'/report');
+}
+
 
 }

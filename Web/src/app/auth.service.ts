@@ -16,20 +16,17 @@ export class AuthService {
 
 
   public isWebMasterLoggedIn(){
-    return localStorage.getItem('webmaster') !== null;
+    return sessionStorage.getItem('webmaster') !== null;
   }
-  public isDOALoggedIn(){
-    return localStorage.getItem('doa') !== null;
-  }
-  public isKeellsLoggedIn(){
-    return localStorage.getItem('keells') !== null;
+  public isUserLoggedIn(){
+    return sessionStorage.getItem('user') !== null;
   }
   public isFarmerLoggedIn(){
-    return localStorage.getItem('farmer') !== null;
+    return sessionStorage.getItem('farmer') !== null;
   }
 
 
   public logout(){
-    localStorage.clear()
+    sessionStorage.clear()
   }
 }

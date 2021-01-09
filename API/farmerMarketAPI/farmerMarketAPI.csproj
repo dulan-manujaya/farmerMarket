@@ -279,9 +279,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\FarmerController.cs" />
+    <Compile Include="Controllers\FarmerLoginController.cs" />
     <Compile Include="Controllers\FarmerProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KeellsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WebMasterController.cs" />
     <Compile Include="Global.asax.cs">
@@ -292,6 +294,7 @@
     <Compile Include="Models\FarmerProducts.cs" />
     <Compile Include="Models\QualityFlagType.cs" />
     <Compile Include="Models\UserAdmin.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

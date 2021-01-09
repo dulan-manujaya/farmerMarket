@@ -42,7 +42,9 @@ export class FarmerRegisterComponent implements OnInit {
    // farmerRegistration
     this.service.farmerRegistration(this.loginForm.value).subscribe(data =>{
       console.log(JSON.stringify(data));
-  
+      alert(JSON.stringify(data));
+      this.router.navigate(['/farmer-login']);
+
       });
 
       

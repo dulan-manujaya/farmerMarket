@@ -6,14 +6,13 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DOAauthGuard implements CanActivate {
+export class UserAuthGuard implements CanActivate {
   constructor(private authService: AuthService){}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
 
-  return this.authService.isDOALoggedIn();
-  }
-  
+  return this.authService.isUserLoggedIn();
+    }
 }
