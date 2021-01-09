@@ -37,6 +37,7 @@ export class FarmerLoginComponent implements OnInit {
     this.service.farmerLogin(this.loginForm.value).subscribe(data =>{
       console.log(JSON.stringify(data));
       sessionStorage.setItem("farmer",JSON.stringify(data))
+      sessionStorage.setItem("farmerId",data[0].FarmerId)
       
         this.router.navigate(['/farmer-profile']);
       

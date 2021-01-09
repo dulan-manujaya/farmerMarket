@@ -30,12 +30,12 @@ export class SharedService {
   }
 
   
-  farmerAddProducts(farmer:any):Observable<any[]>{
-    return this.http.post<any>(this.APIUrl+`/farmerProfile`,farmer);
+  farmerAddProducts(farmer:any,id:string):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/farmer/${id}`,farmer);
   }
 
-  userLogin(farmer:any):Observable<any[]>{
-    return this.http.post<any>(this.APIUrl+`/user`,farmer);
+  userLogin(user:any):Observable<any[]>{
+    return this.http.post<any>(this.APIUrl+`/user`,user);
   }
 
   userCreation(user:any):Observable<any[]>{

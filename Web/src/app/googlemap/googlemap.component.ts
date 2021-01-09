@@ -13,7 +13,7 @@ export class GooglemapComponent implements OnInit {
   FarmerList:any=[];
 
   markers = [
-    {lat:7.2906000000,lng: 80.6337000000,label: "A" ,icon:{}}
+    {lat:7.2906000000,lng: 80.6337000000,label: "A" ,icon:{},id:""}
   ];
 
   lat =7.2906000000;
@@ -73,7 +73,8 @@ export class GooglemapComponent implements OnInit {
           label:element.Username,
           icon: {
             url: element.QualityFlag
-          }
+          },
+          id:element.FarmerId
         });
       });
      

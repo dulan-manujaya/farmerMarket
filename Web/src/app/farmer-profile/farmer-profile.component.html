@@ -1,14 +1,15 @@
 <header style="align-items: center;">
   <a  style="color: rgb(160, 255, 105); padding : 20px " href="/farmer-login">Logout</a> 
 </header>
-<h1 style="text-align: center">User Creation</h1>
+<h1 style="text-align: center">Products</h1>
 <div class="login">
-  <h2 class="login-header">Create user</h2>
+  <h2 class="login-header">Add Product</h2>
   <div class="login-container">
-    <label for="username">Name:</label><br />
-    <input type="text" id="name" name="name" style="width: 25%" /><br />
-    <label for="username">Price:</label><br />
+    <label for="productName" >Name:</label><br />
+    <input type="text" id="name" name="name" style="width: 25%" [(ngModel)]="productName" /><br />
+    <label for="price">Price:</label><br />
     <input
+    [(ngModel)]="price"
       type="number"
       id="price"
       name="price"
@@ -17,21 +18,19 @@
       value="0"
       step=".01"
     /><br />
-    <label for="username">Quantity:</label><br />
+    <label for="quantity">Quantity:</label><br />
     <input
       type="number"
       id="quantity"
+      [(ngModel)]="quantity"
       name="quantity"
       style="width: 25%"
       min="0"
       value="0"
       step=".01"
     /><br />
-    <input
-      type="submit"
-      value="Add"
-      style="padding-right: 50px; padding-left: 50px"
-    />
+    <button (click)="clickFunction()" class="btn btn-success">Add</button>
+
     <br /><br />
 
     <table id="users">

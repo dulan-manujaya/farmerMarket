@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { KeellsAuthGuard } from './keells-auth.guard';
+import { UserAuthGuard } from './user-auth.guard';
 
-describe('KeellsAuthGuard', () => {
-  let guard: KeellsAuthGuard;
+describe('UserAuthGuard', () => {
+  let guard: UserAuthGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(KeellsAuthGuard);
+    guard = TestBed.inject(UserAuthGuard);
   });
 
   it('should be created', () => {

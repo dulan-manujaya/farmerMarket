@@ -294,6 +294,7 @@
     <Compile Include="Models\FarmerProducts.cs" />
     <Compile Include="Models\QualityFlagType.cs" />
     <Compile Include="Models\UserAdmin.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
