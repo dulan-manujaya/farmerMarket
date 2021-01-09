@@ -41,8 +41,7 @@ namespace farmerMarketAPI.Controllers
         {
             try
             {
-                string query = @"insert into [dbo].[User] values
-            ('" + user.Username + @"','" + user.Pwd + @"','" + user.Email + @"','" + user.Location + @"','" + user.Type+ @"')";
+                string query = @"insert into [dbo].[User] values ('" + user.Username + @"','" + user.Pwd + @"','" + user.Email + @"','" + user.Location + @"','" + user.Type+ @"')";
 
                 DataTable table = new DataTable();
                 using (var con = new SqlConnection(ConfigurationManager.
