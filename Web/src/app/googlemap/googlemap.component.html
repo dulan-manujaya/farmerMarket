@@ -27,10 +27,8 @@
        [longitude]="marker.lng">    
 
            <agm-info-window #infoWindow>
-            <strong> {{ marker.label }}</strong>
-            <a href='/user-farmerprofile?id={{marker.id}}'>More Info</a>
-               {{ marker.label }}
-
+            <strong> {{ marker.label }}</strong><br/>
+            <a href='/user-farmerprofile?id={{marker.id}}'>More info</a>
          </agm-info-window>
 
  </agm-marker>
