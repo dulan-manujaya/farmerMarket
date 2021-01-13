@@ -11,7 +11,7 @@ namespace farmerMarketAPI.Models
         public string Username { get; set; }
         public string Pwd { get; set; }
         public string Gender { get; set; }
-        public string MaritalStatus { get; set; }
+        public string Nic { get; set; }
         public decimal Longitude { get; set; }
         public decimal Latitude { get; set; }
         public string QualityFlag { get; set; }

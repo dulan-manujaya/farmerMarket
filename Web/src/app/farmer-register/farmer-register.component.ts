@@ -23,7 +23,7 @@ export class FarmerRegisterComponent implements OnInit {
       pwd: ['', Validators.required],
       conpassword: ['', Validators.required],
       gender: ['', Validators.required],
-      maritalStatus: ['', Validators.required],
+      nic: ['', Validators.required],
       longitude: ['', Validators.required],
       latitude: ['', Validators.required],
       qualityFlag : 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
@@ -82,7 +82,7 @@ export class FarmerRegisterComponent implements OnInit {
         position: 'bottom-right',
       });
       this.isValid = false;
-    } else if (this.loginForm.value.maritalStatus === '') {
+    } else if (this.loginForm.value.nic === '') {
       Swal.fire({
         icon: 'error',
         text: 'Please enter a NIC',
