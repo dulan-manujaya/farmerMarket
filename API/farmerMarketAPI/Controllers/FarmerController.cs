@@ -53,7 +53,7 @@ namespace farmerMarketAPI.Controllers
             try
             {
                 string query = @"insert into dbo.Farmer values
-            ('" + farmer.Username + @"','" + farmer.Pwd + @"','" + farmer.Gender + @"','" + farmer.MaritalStatus + @"','" + farmer.Longitude + @"','" + farmer.Latitude + @"','" + farmer.QualityFlag + @"')";
+            ('" + farmer.Username + @"','" + farmer.Pwd + @"','" + farmer.Gender + @"','" + farmer.Nic + @"','" + farmer.Longitude + @"','" + farmer.Latitude + @"','" + farmer.QualityFlag + @"')";
 
                 DataTable table = new DataTable();
                 using (var con = new SqlConnection(ConfigurationManager.
