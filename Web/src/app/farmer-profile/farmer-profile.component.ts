@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SharedService} from 'src/app/shared.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class FarmerProfileComponent implements OnInit {
   
   quantity:"";
   price:"";
-  productName:""
+  productName:"";
+  isValid = true;
 
   rows = []
 
@@ -48,10 +50,41 @@ export class FarmerProfileComponent implements OnInit {
     
     }
 
-
+    formValidation() {
+      if (this.productName === '' || this.productName === undefined) {
+        Swal.fire({
+          icon: 'error',
+          text: 'Please enter a Name',
+          toast: true,
+          position: 'bottom-right',
+        });
+        this.isValid = false;
+      } else if (this.price === '' || this.price === undefined) {
+        Swal.fire({
+          icon: 'error',
+          text: 'Please enter a price',
+          toast: true,
+          position: 'bottom-right',
+        });
+        this.isValid = false;
+      } 
+      else if (this.quantity === '' || this.quantity === undefined) {
+        Swal.fire({
+          icon: 'error',
+          text: 'Please enter a quantity',
+          toast: true,
+          position: 'bottom-right',
+        });
+        this.isValid = false;
+      } else {
+        this.isValid = true;
+      }
+    }
     clickFunction(){
       // ('" + id + @"','" + farmer.ProductName + @"','" + farmer.Price + @"','" + farmer.Quantity +@"')";
+      this.formValidation();
 
+      if (this.isValid == true) {
       let farmer = {ProductName : this.productName,Price:this.price,Quantity:this.quantity}
       console.log(farmer);
       this.service.farmerAddProducts(farmer,this.id).subscribe(data =>{
@@ -60,6 +93,7 @@ export class FarmerProfileComponent implements OnInit {
         this.getfarmerProfileList();
       //  this.rows = data;
       })
+    }
     }
 
 }
