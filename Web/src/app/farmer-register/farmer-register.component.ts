@@ -13,6 +13,7 @@ export class FarmerRegisterComponent implements OnInit {
   constructor(private service:SharedService,private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
+    
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       pwd: ['', Validators.required],
@@ -21,6 +22,8 @@ export class FarmerRegisterComponent implements OnInit {
       maritalStatus: ['', Validators.required],
       longitude: ['', Validators.required],
       latitude: ['', Validators.required],
+      qualityFlag : 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+
     });
   }
 
